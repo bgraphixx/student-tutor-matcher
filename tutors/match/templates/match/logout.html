@@ -1,0 +1,15 @@
+{% load static %}
+<div class="container-form">
+    <div class="header">
+        <h1>Log out</h1>
+    </div>
+    <div class="middle">
+        <img class="success" src = "{% static 'img/icon/success_icon.png' %}">
+        <p>You've logged out successfully</p>
+    </div>
+    <div class="myform">
+        <form action=" {% url 'login' %} "> 
+            <button class="secondary-btn" type="submit">LOGIN AGAIN</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+body{
+    background-image:url("images\th (6).jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.container{
+    height: 40px;
+    background-color: whitesmoke;
+    }
+    .nav-item{
+      background-color: whitesmoke;
+    }
+    ul {
+      list-style-type:none;
+      overflow: hidden;
+    }
+    
+    li {
+      float: right;
+    }
+    
+    li a {
+      display: inline;
+      color: rgb(4, 13, 65);
+      text-align: right;
+      padding:0;
+      text-decoration: none;
+      float: right;
+      font-weight: bold;
+      background-color:whitesmoke;
+      font: normal 20px "Brush Script MT";
+      font-size:20px;
+    
+    }
+    
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+      background-color: rgb(4, 13, 65);
+      color:grey;
+    }
+    .pricing-style-one{
+      margin-left: 60px;
+      margin-top:30px;
+    }
+    .pricing-header{
+      background-color: whitesmoke;
+      color:rgb(4, 13, 65);
+     margin-right:100px;
+      margin-top:50px;
+      font-size:20px;
+      font-family:Georgia;
+      height:50px;
+
+    }
+    .main-btn{
+      display: block;
+      background: rgb(4, 13, 65);
+      border-radius: 5px;
+      color: #fff;
+      width: 120px;
+      height: 50px;
+      font-size: 20px;
+      line-height: 50px;
+      margin: 0 auto;
+      padding-bottom:20px;
+    
+    }
+    .main-btn:hover {
+      background-color: #02b8dd;
+      color: #fff;
+    }

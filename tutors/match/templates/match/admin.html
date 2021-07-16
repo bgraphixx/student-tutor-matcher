@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Admin Page</title>
+        <!--CSS Stylesheet-->
+        <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--JQuery-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+        <!--Popper JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+        <!--Bootstrap JS-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!--Font Awesome CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Font Awesome JS-->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}"
+                    style="font-weight: bold;color: white; font-family: Oswald!important;">LEARN</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">SIGN IN</a>
+                        </li>
+                    </ul>    
+                </div>
+            </div>
+        </nav>
+        <section>
+                <div class="row">
+                    <div class="col-4 profile">
+                        <div class="text-center">
+                            <img src="{% static 'img/avatar3.png' %}" class="img-fluid" width="40%" style="margin-bottom: 30%;">
+                            <div>
+                                <h1>Welcome {{user.first_name}}</h1>
+                            </div>
+                            <a href="{% url 'logout' %}" class="btn mt-4" style="width: 60%;">Logout</a>
+                        </div>
+                    </div>
+                    <div class="col-8 content2" style="padding-left: 10%;">
+                        <div class="container">
+                            <div class="row details" id="detail1">
+                                <div class="col-4 img1">
+                                    <img src="{% static 'img/image2.png' %}" width="100%">
+                                </div>
+                                <div class="col-8 detail-text">
+                                    <h2>Predict Student Performance</h2>
+                                    <p>Use Artifical Intelligence to predict student performance.</p>
+                                    <a href="{% url 'new_predict' %}" class="btn" style="width: 30%; float: right;">Predict</a>
+                                </div>
+                            </div>
+                            <div class="row details">
+                                <div class="col-4 img2">
+                                    <img src="{% static 'img/image2.png' %}" width="100%">
+                                </div>
+                                <div class="col-8 detail-text">
+                                    <h2>Match Compatible Student</h2>
+                                    <p>Use matching algorithm to match compatible students. </p>
+                                    <a href="{% url 'match' %}" class="btn" style="width: 30%; float: right;">Match</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section id="footer">
+            <div class="container text-center" style="color: white; padding-top: 20px ">
+                <p>Project by Boluwatife Onajobi</p>
+            </div>
+        </section>
+    </body>
+</html>

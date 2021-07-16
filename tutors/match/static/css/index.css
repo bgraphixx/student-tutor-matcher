@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap');
+/*---Navigation Bar---*/
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.navbar{
+    background: #8BA3AB!important;
+    position: absolute;
+    width: 100vw;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+}
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: gray;
+}
+.navbar-brand img{
+    height: 40px;
+    padding-left: 30px;
+    background-color:grey;
+}
+.navbar-nav li{
+    padding: 0 10px;
+}
+.navbar-nav li a{
+    float: right;
+    text-align: left;
+}
+.navbar-toggler{
+    border: none!important;
+}
+.nav-link{
+    color: #597A8D!important;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+.nav-link:hover{
+    color: #345A73!important;
+}
+
+#image{
+    background-image: url(img/background.png);
+    height:90vh;
+    margin-bottom: 5%;
+}
+.home-content{
+    padding-top: 300px;
+    align-content: center;
+    justify-content: center;
+}
+
+.about-content{
+    font-size: 20px;
+    color:#8BA3AB!important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+h2{
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    color: #345A73!important;
+}
+.btn{
+    outline: none;
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    padding-top:  15px!important; 
+    height: 60px; 
+    width: 20%;
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(180deg, #72878D 0%, #345A73 100%)!important; 
+    color: white; 
+    border-radius: 5px; 
+    font-weight: bolder !important;
+}
+.btn:hover{
+    color: #345A73 !important;
+    background: transparent !important;
+    border: 2px solid #345A73 !important;
+}
+.banner-txt{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 6vw;
+    font-family: 'Oswald', sans-serif ;
+}
+#footer{
+    background-color: #345A73!important;
+    height:60px;
+}
+.about-img{
+    border-radius: 10px; 
+    margin-bottom: 15%;
+}
+.about-header{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

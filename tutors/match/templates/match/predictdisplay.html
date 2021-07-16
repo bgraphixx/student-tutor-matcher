@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Prediction Results</title>
+        <!--CSS Stylesheet-->
+        <link rel="stylesheet" href="{% static 'css/predictdisplay.css' %}">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--JQuery-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+        <!--Popper JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+        <!--Bootstrap JS-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!--Font Awesome CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Font Awesome JS-->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap');
+    .modal-header{
+         background: #8BA3AB!important;
+    }
+    </style>
+    <body>
+    <!--Navigation Bar-->
+         <nav class="navbar navbar-expand-lg fixed-top">
+           <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}" style="font-weight: bold;color: white; font-family: Oswald!important;">LEARN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'new_predict' %}">Predict</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'match' %}">Match</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin_page' %}">Admin</a>
+                </li>
+                </ul>
+            </div>
+           </div>
+          </nav> 
+                <div class="container">
+                <div class="row no-gutters" style="height:50px;" >
+                    <div class="col-lg-5">
+                        <img class="img-fluid" src="{% static 'img/predict.png'  %}" width="220%;" height="900px;" alt="">
+                    </div>
+                </div>
+                <div class="col-md-7 px-5 pt-5">
+                <h2>Result</h2>
+                    <hr>
+                    <br><br><br><br>
+                <h2>{{ mystudent}} is most likely to <br>
+                    {% if assestment == "Fail" %}
+                        <strong style="color: red">{{assestment}}</strong>
+                    {% else %}
+                        <strong style="color: green">{{assestment}}</strong>     
+                    {%endif %}  
+                </h2>
+                </div>
+        
+    </div>
+    <!--Footer-->
+        <section id="footer">
+            <div class="container text-center" style="color: white; padding-top: 20px ">
+                <p>Project by Boluwatife Onajobi</p>
+            </div>
+        </section>
+    <!--footer end-->
+        <script src="js/smooth-scroll.js"></script>
+        <script>
+            var scroll = new SmoothScroll('a[href*="#"]');
+            $(window).scroll(function() {
+            $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+                $(this).addClass("slide");
+            }
+            });
+        });
+        </script>
+    </body>
+</html>

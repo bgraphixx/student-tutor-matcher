@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--JQuery-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+        <!--Popper JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+        <!--Bootstrap JS-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!--Font Awesome CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Font Awesome JS-->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap');
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+    }  
+    .navbar{
+    background: #8BA3AB!important;
+    position: absolute;
+    width: 100vw;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    font-family: 'Oswald', sans-serif;
+    }  
+    
+        body{
+    color:#8BA3AB!important;
+    }
+    .row{
+        margin-top: 70px;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 12px 12px 22px grey;
+        height:400px;
+        width:1000px;
+        margin-left:60px;
+        padding-bottom:10px;
+    }
+    .Form{
+        padding:30px;
+        padding-bottom:20px;
+        margin-bottom:20px;
+    }
+    img{
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+    }
+    .img-fluid{
+        height:400px;
+    }
+    .btn1{
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100%;
+       font-family: 'Oswald', sans-serif;
+        background: linear-gradient(180deg, #72878D 0%, #345A73 100%)!important; 
+        color: white; 
+        border-radius: 5px; 
+        font-weight: bolder !important;
+}
+    .btn1:hover{
+        background-color: white;
+        color: #345A73!important;
+        border: 1px solid;
+        cursor: pointer;
+    }
+    a{
+      color:#8BA3AB!important;
+        font-weight: bold;
+        color:white; 
+        font-family: 'Oswald', sans-serif!important;
+
+    }
+    a:hover{
+        text-decoration: none;
+        color:#345A73!important;
+    }
+    h1,h4{
+        color:#8BA3AB!important;
+    }
+    .navbar-brand{
+        color:white!important;
+        font-family: 'Oswald', sans-serif!important;
+    }
+    p{
+        padding-bottom:10px;
+        margin-bottom:20px;
+    }
+    </style>
+    
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <section id = "nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}" style="font-weight: bold;color:white; font-family: 'Oswald', sans-serif!important;">LEARN</a>
+            </div>
+        </nav>
+    </section>
+    <!--HTML Code-->
+    <section class="Form my-4 mx-5">
+    <div class="container text-center">
+        <div class="row no-gutters">
+            <div class="col-lg-5">
+                <img class="img-fluid" src="{% static 'img/image2.png' %}" width="220%;" height="900px;" alt="">
+            </div>
+            <div class="col-md-7 px-5 pt-5">
+                <h4 class="mb-3">Sign In</h4>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="form-row justify-content-center">
+                        <div class="col-lg-7">
+                            {{ field.label_tag}}
+                            <input type="{{ field.widget_type }}" class="form-control" id="{{ field.id_for_label }}" maxlength="30" name="{{ field.html_name }}" /> 
+                            {{ field.errors }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="form-row justify-content-center">
+                        <div class="col-lg-7">
+                            <input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email must contain @ and . "  placeholder="Email Address" class="form-control my-3 p-2" id="email">
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="col-lg-7">
+                            <input required type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must be 8 characters long consisting of at least a small letter, capital letter and number" placeholder="*******" class="form-control my-3 p-2" id="password">
+                            
+                        </div>
+                    </div> -->
+                    <div class="form-row justify-content-center">
+                        <div class="col-lg-7">
+                            <input type="submit" value="Login" class="btn1 mt-3 mb-5">   
+                        </div>
+                    </div>
+                    <a href="#">Forgot your Password?</a>
+                    <p>Don't have an Account? <a href="{% url 'sign_up' %}">Register Here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Font Awesome JS-->
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<!--JQuery-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<!--popper.JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!--Bootstrap JS-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

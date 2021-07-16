@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap');
+
+.navbar{
+    background: #8BA3AB!important;
+    position: absolute;
+    width: 100vw;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+}
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: gray;
+}
+.navbar-brand img{
+    height: 40px;
+    padding-left: 30px;
+    background-color:grey;
+}
+.navbar-nav li{
+    padding: 0 10px;
+}
+.navbar-nav li a{
+    float: right;
+    text-align: left;
+}
+.navbar-toggler{
+    border: none!important;
+}
+.nav-link{
+    color: #597A8D!important;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+.nav-link:hover{
+    color: #345A73!important;
+}
+.content2{
+    margin-top: 3%;
+}
+.profile{
+    background: #BEC6BF;
+    margin-top: -2%;
+    padding-top: 10%;
+    padding-bottom: 13%;
+}
+.details{
+    margin-top: 80px;
+    box-shadow: 2px 2px 4px 2px grey;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    width: 90%;
+}
+.detail-text{
+    padding-top: 30px;
+    font-family: Montserrat!important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #345A73;
+}
+.img1{
+    background: url(../static/img/image2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.img2{
+    background:url(../static/img/signup.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn{
+    outline: none;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    padding-top:  3px!important; 
+    height: 50px; 
+    width: 15%;
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(180deg, #72878D 0%, #345A73 100%)!important; 
+    color: white; 
+    border-radius: 5px; 
+    font-weight: bolder !important;
+    justify-content: center;
+    padding: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+.btn:hover{
+    color: #345A73 !important;
+    background: transparent !important;
+    border: 2px solid #345A73 !important;
+}
+#footer{
+        background-color: #345A73!important;
+        height:50px;
+        position: absolute;
+        width: 100vw;
+        left: 3px;
+        top: 750px;
+        background: #345A73;
+}

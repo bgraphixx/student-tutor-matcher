@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+margin: 0;
+box-sizing: border-box;  
+
+}    
+body{
+background-color: #65c8d0;
+}
+.navbar{
+height: 55px;
+background-color: whitesmoke;
+font: normal 20px "Brush Script MT";
+}
+.container1{
+height: 35px;
+padding-top: 0;
+}
+
+  section{
+    margin:20px;
+    padding:3px;
+    size:15px;
+    
+  }
+  
+  ul {
+    list-style-type:none;
+    overflow: hidden;
+  }
+  
+  li {
+    float: right;
+    justify-content: right;
+  }
+  
+  li a {
+    display: inline;
+    color:  rgb(4, 13, 65);
+    text-align: right;
+    padding:0;
+    text-decoration: none;
+    float: right;
+    font-weight: bold;
+    font: normal 20px "Brush Script MT";
+    background-color:whitesmoke;
+    font-size:20px;
+    justify-content: right;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+    color:grey;
+  }
+.wrapper {
+text-align: center;
+margin-top: 30px;
+color:   rgb(5, 15, 68);
+font: normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+border-radius: 5px;
+border-style: initial;
+box-sizing: border-box;
+padding-top: 5px;
+font:20px;
+font-weight: bold;
+text-align: center;
+background-color: white;
+}
+
+.container{
+    border-radius: 5px;
+    border-color:white;
+    box-sizing: border-box;
+    border-style: initial;
+    background-color: #65c8d0;
+    padding-top: 13px;
+    padding-bottom: 10px;
+}
+.form-control{
+  width:350px;
+  height:40px;
+  border-color:rgb(5, 15, 68) ;
+  border-style: initial;
+  border-radius:3px;
+  box-sizing: border-box;
+}
+.form-select{
+    width: 470px;
+    border-radius: 3px;
+    height:40px;
+}
+.form-select1{
+    width: 320px;
+    border-radius: 3px;
+    height:40px;
+}
+.form-select2{
+    width: 400px;
+    border-radius: 3px;
+    height:40px;
+}
+.row g-3{
+    border-style: initial;
+    border-radius:3px;
+    border-color:rgb(5, 15, 68);
+    box-sizing: border-box;
+}
+label{
+padding-top: 5px;
+padding-bottom: 0;
+}
+.button{
+  background-color: rgb(5, 15, 68);
+  color: grey;
+  padding: 0;
+  padding-top: 8px;
+  padding-bottom:8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 70px;
+  border-radius: 4px;
+  font-weight: bold;
+  box-align:center; 
+  margin:30px;
+  justify-content: center;
+}
+
+.mybutton{
+  background-color: rgb(5, 15, 68) !important;
+  color: grey;
+  padding: 0;
+  padding-top: 8px;
+  padding-bottom:8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 70px;
+  border-radius: 4px;
+  font-weight: bold;
+  box-align:center; 
+  margin:30px;
+  justify-content: center;
+}
+  
+  .button:hover, .button:active {
+    background-color: white;
+        color: rgb(2, 9, 49);
+        border: 1px solid;
+        cursor: pointer;
+    
+  }

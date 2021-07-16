@@ -1,0 +1,79 @@
+body {
+  font: normal 15px "Brush Script MT";  background-repeat: no-repeat;
+  background-size:cover;
+  text-align: center;
+  background-color: white;
+  background-image:"images\th (5).jpg";
+}
+
+.container{
+height: 40px;
+background-color: whitesmoke;
+}
+.nav-item{
+  background-color: whitesmoke;
+}
+*{
+  background-color: #65c8d0;
+  background-image:"images\th (5).jpg";
+}
+
+ul {
+  list-style-type:none;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: inline;
+  color: rgb(4, 13, 65);
+  text-align: right;
+  padding:0;
+  text-decoration: none;
+  float: right;
+  font-weight: bold;
+  background-color:whitesmoke;
+  font: normal 20px "Brush Script MT";
+  font-size:20px;
+
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgb(4, 13, 65);
+  color:grey;
+}
+
+h2 {
+  font-weight: 300;
+  color: #444;
+  font-size: 55px;
+  text-transform: uppercase;
+  text-align: center;
+  /* margin-bottom: 20px;
+  margin: 180px 0 40px 0; */
+  text-align: center;
+  font-family: Brush Script MT;
+}
+.button-1 {
+  display: block;
+  text-align: center;
+  background: #444;
+  border-radius: 3px;
+  color: #fff;
+  width: 180px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  margin: 0 auto;
+}
+.button-1:hover {
+  background-color: #02b8dd;
+  color: #fff;
+}
+.wrapper{
+  margin-top: 20%;
+}

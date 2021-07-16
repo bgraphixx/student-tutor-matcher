@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home Page</title>
+        <!--CSS Stylesheet-->
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--JQuery-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+        <!--Popper JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+        <!--Bootstrap JS-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!--Font Awesome CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Font Awesome JS-->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        <!--Navigation Bar-->
+         <nav class="navbar navbar-expand-lg fixed-top">
+           <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}" style="font-weight: bold;color: white; font-family: Oswald!important;">LEARN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">SIGN IN</a>
+                </li>
+                </ul>
+            </div>
+           </div>
+          </nav> 
+    <!--Animated Pictures-->
+    <section id="image">
+        <div class="home" style="background-image: url({% static '/img/background.png' %}); ">
+            <div class="home-content text-center">
+            <h1 class = "banner-txt">LEARNING MADE EASY!</h1>
+             <a href="{% url 'login' %}" class="btn text-center">Get Started</a>
+            </div>
+        </div>
+    </section>
+    <!--About Us-->
+    <section class="about container">
+          <div class="row slideanim">
+              <div class="col-md-5">
+              <img src="{% static 'img/about.png' %}" alt="about" width= "90%:" class="about-img"> 
+              </div>
+              <div class="col-md-7">
+                  <h2 class="about-header">ABSTRACT</h2>
+                  <div class="about-content mt-4">
+                  Ever wonder what can be done to assist and drop the level of student's dependency on their teachers? Learn has been designed using a machine learning algorithm for accurate grade prediction and a matching algorithm to match a struggling student to a student willingy to tutor.
+                  </div>
+                  <div class="text-center">
+                  <a href="{% url 'sign_up' %}" class="btn mt-4" style = "width: 60%;">Sign Up</a>
+                  </div>
+                </div>
+            </div>
+    </section>
+    <!--Footer-->
+    <section id="footer" >
+        <div class="container text-center" style="color: white; padding-top: 20px ">
+            <p>Project by Boluwatife Onajobi</p>
+        </div>
+    </section>
+    <!--footer end-->
+    <script src="js/smooth-scroll.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+        $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+        });
+      });
+    </script>
+    </body>
+</html>

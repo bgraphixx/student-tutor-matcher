@@ -1,0 +1,265 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <!--CSS Stylesheet-->
+    <link href="{% static 'css/predict.css' %}" rel="stylesheet">
+    <!--Bootstrap CSS-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!--Popper JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!--Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--Font Awesome CSS-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--Font Awesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<!--Navigation Bar-->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}"
+           style="font-weight: bold;color: white; font-family: Oswald!important;">LEARN</a>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin_page' %}">ADMIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'match' %}">MATCH</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Body-->
+<div class="predict">
+    <form action="{% url 'predict_result' %}" method="POST">
+        {% csrf_token %}
+        <h2>Predict Student Performance</h2>
+        <hr>
+        <br><br>
+        <h4>Student Identity</h4>
+        <section class="Form my-4 mx-5">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>First Name</label>
+                        <input aria-label="First name" class="form-control" name="fname" type="text">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Last Name</label>
+                        <input aria-label="Last name" class="form-control" name="lname" type="text">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Student ID</label>
+                        <input class="form-control" id="inputstudentid" name="stid" type="text">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Gender</label><br>
+                        <select class="form-select1" id="inputGender" name="sex">
+                            <option selected></option>
+                            <option value="2">Male</option>
+                            <option value="1">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Age</label><br>
+                        <select class="form-select1" id="inputAge" name="age">
+                            <option selected></option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <br><br>
+        <h4>Family Background</h4>
+        <section class="Form my-4 mx-5">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>Parental Status</label><br>
+                        <select class="form-select" id="inputparentalstaus" name="Pstatus">
+                            <option selected></option>
+                            <option value="2">Together</option>
+                            <option value="1">Apart</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Guardian</label><br>
+                        <select class="form-select" id="inputguardian" name="guardian">
+                            <option selected></option>
+                            <option value="1">Father</option>
+                            <option value="2">Mother</option>
+                            <option value="3">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <br><br>
+        <h4>Student Behaviour</h4>
+        <section class="Form my-4 mx-5">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>Intention to Pursue Higher Education</label><br>
+                        <select class="form-select" id="inputhigher" name="higher">
+                            <option selected></option>
+                            <option value="2">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Romantic Relationships</label><br>
+                        <select class="form-select" id="inputromantic" name="romantic">
+                            <option selected></option>
+                            <option value="2">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-6 mt-5">
+                        <label>Extra Curricular Activities</label><br>
+                        <select class="form-select" id="inputextracurr" name="activities">
+                            <option selected></option>
+                            <option value="2">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mt-5">
+                        <label>Alcohol Consumption During Weekdays</label><br>
+                        <select class="form-select" id="inputWalc" name="Walc">
+                            <option selected></option>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <br><br>
+        <h4>Learning Behaviour</h4>
+        <section class="Form my-4 mx-5">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>Learning Styles</label><br>
+                        <select class="form-select" id="inputlearning" name="learning">
+                            <option selected></option>
+                            <option>Visual</option>
+                            <option>Auditory</option>
+                            <option>Kinesthetic</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Personality Styles</label><br>
+                        <select class="form-select" id="inputpersonal" name="personal">
+                            <option selected></option>
+                            <option value="Introvert">Introvert</option>
+                            <option value="Extrovert">Extrovert</option>
+                            <option>Feeling</option>
+                            <option>Intuitive</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-6 mt-5">
+                        <label>Area of Interest</label><br>
+                        <select class="form-select" id="inputarea" name="area">
+                            <option selected></option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="English">English</option>
+                            <option value="Physics">Physics</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <br><br>
+        <h4>Prior Academic Performance</h4>
+        <section class="Form my-4 mx-5">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>Number of failures</label><br>
+                        <select class="form-select" id="inputfailures" name="failures">
+                            <option selected></option>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Grade 1</label>
+                        <input class="form-control" name="G1" type="number">
+                        <p class="text mt-3">Grades should range between 0-20</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Grade 2</label>
+                        <input class="form-control" name="G2" type="number">
+                        <p class="text mt-3">Grades should range between 0-20</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Grade 3</label>
+                        <input class="form-control" name="G3" type="number">
+                        <p class="text mt-3">Grades should range between 0-20</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" style="margin-left: 40%" type="submit">Predict</button>
+        </section>
+    </form>
+</div>
+<!--Footer-->
+<section id="footer">
+    <div class="container text-center" style="color: white; padding-top: 20px ">
+        <p>Project by Boluwatife Onajobi</p>
+    </div>
+</section>
+<!--footer end-->
+<script src="js/smooth-scroll.js"></script>
+<script>
+            var scroll = new SmoothScroll('a[href*="#"]');
+            $(window).scroll(function() {
+            $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+                $(this).addClass("slide");
+            }
+            });
+        });
+
+
+</script>
+</body>
+</html>

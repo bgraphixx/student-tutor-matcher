@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/prediction.css' %}">
+    <link href="http://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet" type="text/css" >
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--Font Awesome CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <section id= "nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <div class="container1">
+                  <a class="navbar-brand" href="{% url 'index' %}" style="font-weight: bold; color:rgb(2, 2, 51);font-family:Brush Script MT; font-size:40px; ">Learn</a>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <div class="wrapper">
+        <h3 style="color: red">Welcome {{ user.first_name }} {{user.last_name}}</h3>
+            <h3>Match Result</h3>
+            <h4><img src="{% static 'img/identity1.jpg' %}" width="30px">Student Identity</h4>
+            <section class="Form my-4 mx-5">
+                <div class="container">
+                    
+                       
+                    <a href="{% url 'logout' %}">Back</a>     
+                </div>
+            </section>
+    </div>
+</body>
+</html>

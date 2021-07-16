@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Homepage</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/prediction.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--Font Awesome CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <section id= "nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <div class="container1">
+                  <a class="navbar-brand" href="{% url 'index' %}" style="font-weight: bold; color:rgb(2, 2, 51);font-family:Brush Script MT; font-size:40px; ">Learn</a>
+                </div>
+            </nav>
+        </section>
+    </header>
+    
+        <div class="wrapper">
+            <h3 style="color: red">Welcome {{ user.first_name }} {{user.last_name}}</h3>
+            <h3>Predict Result</h3>
+            <h4><img src="{% static 'img/identity1.jpg' %}" width="30px">Student Identity</h4>
+            <section class="Form my-4 mx-5">
+            <div class="container">
+            <form class="row g-3" action= "" method="POST">
+              {% csrf_token %}
+              {{ myform.non_field_errors }}
+                <div class="col-md-6">
+                  {{ myform.subject.errors }}
+                  {{ myform.first_name }}
+                </div>
+                <div class="col-md-6">
+                  {{ myform.subject.errors }}
+                  {{ myform.last_name }}
+                </div>
+                <div class="col-md-4">
+                    {{ myform.subject.errors }}
+                    <label for="inputCity" class="form-label">Student ID</label>
+                    {{ myform.student_id }}
+                  </div>
+                <div class="col-md-4">
+                  {{ myform.subject.errors }}
+                    <label for="inputGender" class="form-label">Gender</label>
+                    {{ myform.gender}}
+                  </div>
+                <div class="col-md-4">
+                  {{ myform.subject.errors }}
+                    <label for="inputAge" class="form-label">Age</label>
+                    {{ myform.age }}
+                  </div>
+                </form>
+                </div>
+            </section>
+
+            <h4><img src="{% static 'img/family.png' %}" width="30px">Family Background</h4>
+            <section class="Form my-4 mx-5">
+                <div class="container">
+                <form class="row g-3">
+                <div class="col-md-6">
+                        <label for="inputparentalstatus" class="form-label">Parental Status</label>
+                        {{ myform.parental_status }}
+                </div>
+                <div class="col-md-6">
+                    <label for="inputguardian" class="form-label">Guardian</label>
+                    {{ myform.guardian }}
+                </div>
+                </form>
+                </div>
+            </section>
+            <h4><img src="{% static 'img/student.png' %}" width="30px">Student Behaviour</h4>
+            <section class="Form my-4 mx-5">
+                <div class="container">
+                <form class="row g-3">
+                <div class="col-md-6">
+                      {{ myform.subject.errors }}
+                        <label for="inputparentalstatus" class="form-label">Intention to pursue higher education</label>
+                        {{ myform.intention }}
+                </div>
+                <div class="col-md-6">
+                    <label for="romantic-relationship" class="form-label">Romantic Relationships</label>
+                    {{ myform.romantic }}
+                </div>
+                <div class="col-md-6">
+                    <label for="extra-curr" class="form-label">Extra Curricular Activities</label>
+                    {{ myform.extra_curr }}
+            </div>
+            <div class="col-md-6">
+                <label for="alcohol-cons" class="form-label">Alchol Consumption During Weekdays</label>
+                {{ myform.alcohol_cons }}
+            </div>
+            </form>
+            </div>
+            </section>
+          <h4><img src="{% static 'img/result.png' %}" width="30px">Prior Academic Performance</h4>
+        <section class="Form my-4 mx-5">
+        <div class="container">
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputGender" class="form-label">Number of failures</label>
+                {{ myform.no_of_failures }}
+              </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">Grade 1</label>
+                {{ myform.grade1 }}
+                <small>Grades should range between 0-20</small>
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">Grade 2</label>
+                {{ myform.grade2 }}
+                <small>Grades should range between 0-20</small>
+              </div>
+              <div class="col-md-6">
+                <label for="inputCity" class="form-label">Grade 3</label>
+                {{ myform.grade3 }}
+                <small>Grades should range between 0-20</small>
+              </div>
+              </div>
+              <div class="button">
+                <a href="{% url 'logout' %}">Back</a>     
+            </div>
+            <div class="button">
+              <input type="submit" value="Predict" class = "mybutton" >
+            </div>
+              <!-- <div class="button">
+                <a href="{% url 'match' %}">Predict</a>     
+            </div> -->
+            </form>
+            </div>
+        </section>
+        
+        </div>
+    </div>
+    </div>
+
+    
+<!--Font Awesome JS-->
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<!--JQuery-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<!--popper.JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!--Bootstrap JS-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    
+    
+</body>
+</html>
